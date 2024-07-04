@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy Restaurants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .restaurant-card { height: 500px; overflow: hidden; }
+        .carousel { height: 300px !important; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-controls {
+            position: absolute;
+            bottom: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        .badge-recommended {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="blue darken-3">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Italy Restaurants</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s12 m2">
+                <input type="text" id="nameFilter" class="validate">
+                <label for="nameFilter">Search</label>
+            </div>
+            <div class="input-field col s12 m2">
+                <select id="priceFilter">
+                    <option value="">All Prices</option>
+                    <option value="€">€</option>
+                    <option value="€€">€€</option>
+                    <option value="€€€">€€€</option>
+                    <option value="€€€€">€€€€</option>
+                </select>
+                <label>Filter by Price</label>
+            </div>
+            <div class="input-field col s12 m2">
+                <select multiple id="cuisineFilter">
+                </select>
+                <label>Filter by Cuisine</label>
+            </div>
+            <div class="col s12 m2">
+                <label>
+                    <input type="checkbox" id="recommendedFilter" class="filled-in" />
+                    <span>Recommended Only</span>
+                </label>
+            </div>
+            <div class="input-field col s12 m2">
+                <select id="sortFilter">
+                    <option value="">No Sorting</option>
+                    <option value="price">Price: Low to High</option>
+                    <option value="distance">Distance: Near to Far</option>
+                    <option value="recommended">Recommended First</option>
+                </select>
+                <label>Sort By</label>
+            </div>
+            <div class="col s12 m2">
+                <label>Filter by Days</label>
+                <p>
+                    <label>
+                        <input type="checkbox" class="filled-in" value="Thu" />
+                        <span>Thu</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filled-in" value="Fri" />
+                        <span>Fri</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filled-in" value="Sat" />
+                        <span>Sat</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" class="filled-in" value="Sun" />
+                        <span>Sun</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+        <div id="restaurantList" class="row"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
